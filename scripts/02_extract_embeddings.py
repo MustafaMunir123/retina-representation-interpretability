@@ -37,6 +37,22 @@ def main() -> int:
         action="store_true",
         help="Allow CPU extraction for tiny smoke tests only.",
     )
+    parser.add_argument(
+        "--chunk-size",
+        type=int,
+        default=512,
+        help="Images per checkpoint chunk.",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Recompute chunks and final artifacts even if valid outputs already exist.",
+    )
+    parser.add_argument(
+        "--finalize-only",
+        action="store_true",
+        help="Skip extraction and assemble final artifacts from existing valid chunks.",
+    )
     args = parser.parse_args()
 
     config = load_config(args.config)
@@ -49,6 +65,9 @@ def main() -> int:
         output_prefix=args.output_prefix,
         allow_cpu=args.allow_cpu,
         image_root=args.image_root,
+        chunk_size=args.chunk_size,
+        force=args.force,
+        finalize_only=args.finalize_only,
     )
     print(json.dumps(metadata, indent=2, sort_keys=True))
     print(f"\nEmbedding extraction complete: {metadata['num_images']} images")
