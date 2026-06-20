@@ -13,6 +13,8 @@ dependencies = [
   "pyarrow",
   "pillow",
   "pyyaml",
+  "huggingface_hub",
+  "python-dotenv",
 ]
 
 [tool.setuptools.packages.find]

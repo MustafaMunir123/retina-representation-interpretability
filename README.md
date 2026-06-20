@@ -124,6 +124,27 @@ The canonical first run is `configs/eyepacs_resized_dinov2.yaml`. Use
 `configs/eyepacs_cropped_dinov2.yaml` for the preprocessing comparison after the
 baseline is validated.
 
+## Hugging Face Data Sync
+
+Raw data and generated data artifacts are not committed to git. To mirror them
+through the Hugging Face dataset repo while preserving project-relative paths:
+
+```bash
+python scripts/sync_hf_dataset.py upload \
+  --repo-id mm2036/retina-representation-interpretability
+```
+
+On another machine:
+
+```bash
+python scripts/sync_hf_dataset.py download \
+  --repo-id mm2036/retina-representation-interpretability
+```
+
+The default sync includes `outputs/manifests`, `outputs/quality`, and
+`outputs/figures/quality`. Raw images should come from the original Kaggle
+dataset, not this Hugging Face mirror.
+
 ## Setup
 
 ```bash

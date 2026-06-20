@@ -14,3 +14,5 @@ torchvision
 timm
 transformers
 ruff
+huggingface_hub
+python-dotenv
