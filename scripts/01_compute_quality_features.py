@@ -32,6 +32,11 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=None, help="Optional image limit for smoke tests.")
     parser.add_argument("--shard-id", type=int, default=None, help="Optional deterministic shard id.")
     parser.add_argument("--num-shards", type=int, default=None, help="Total shard count.")
+    parser.add_argument(
+        "--image-root",
+        default=None,
+        help="Override dataset image root for resolving relative_image_path.",
+    )
     parser.add_argument("--no-figures", action="store_true", help="Skip histograms and sample grids.")
     parser.add_argument(
         "--samples-per-grid",
@@ -48,6 +53,7 @@ def main() -> int:
         limit=args.limit,
         shard_id=args.shard_id,
         num_shards=args.num_shards,
+        image_root=args.image_root,
         make_figures=not args.no_figures,
         samples_per_grid=args.samples_per_grid,
     )

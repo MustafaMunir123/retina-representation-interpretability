@@ -230,3 +230,4 @@ outputs/**/*.pdf
 !outputs/**/.gitkeep
 
 docs
+kaggle/

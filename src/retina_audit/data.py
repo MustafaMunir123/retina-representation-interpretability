@@ -50,12 +50,16 @@ def _audit_csv_label_dataset(
     _require_columns(labels, (image_id_column, label_column), label_csv)
     labels[image_id_column] = labels[image_id_column].astype(str)
 
+    dataset_root = _dataset_root(label_csv, image_root)
     image_paths = _collect_image_paths(image_root)
     image_lookup = _build_image_lookup(image_paths)
     manifest = labels.copy()
     manifest["image_id"] = manifest[image_id_column].map(_normalize_image_id)
     manifest["image_path"] = manifest["image_id"].map(
         lambda image_id: str(image_lookup.by_stem.get(image_id, ""))
+    )
+    manifest["relative_image_path"] = manifest["image_path"].map(
+        lambda path: _relative_image_path(path, dataset_root)
     )
     manifest["label"] = pd.to_numeric(manifest[label_column], errors="coerce")
     manifest["split"] = str(dataset.get("split", "train"))
@@ -134,6 +138,7 @@ def _audit_folder_dataset(
             {
                 "image_id": image_path.stem,
                 "image_path": str(image_path),
+                "relative_image_path": str(rel),
                 "label": class_name,
                 "class_name": class_name,
                 "split": split,
@@ -360,6 +365,24 @@ def _required(section: dict[str, Any], key: str) -> str:
 def _resolve_project_path(project_root: Path, value: str) -> Path:
     path = Path(value).expanduser()
     return path if path.is_absolute() else project_root / path
+
+
+def _dataset_root(label_csv: Path, image_root: Path) -> Path:
+    """Infer the portable dataset root shared by label CSV and image folder."""
+    try:
+        return Path(Path(label_csv).parent)
+    except Exception:
+        return Path(image_root)
+
+
+def _relative_image_path(path: str, dataset_root: Path) -> str:
+    if not path:
+        return ""
+    image_path = Path(path)
+    try:
+        return str(image_path.relative_to(dataset_root))
+    except ValueError:
+        return str(image_path.name)
 
 
 def _require_columns(frame: Any, columns: tuple[str, ...], source: Path) -> None:

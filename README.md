@@ -75,6 +75,55 @@ Expected outputs:
 The Phase 2 gate passes when at least three bottleneck features have meaningful
 spread and the minimum set of sharpness, brightness, and contrast is usable.
 
+## Phase 3 Status
+
+Phase 3 implements frozen embedding extraction.
+
+Local CPU smoke test only:
+
+```bash
+python scripts/02_extract_embeddings.py \
+  --config configs/eyepacs_resized_timm.yaml \
+  --subset 8 \
+  --allow-cpu
+```
+
+GPU run:
+
+```bash
+python scripts/02_extract_embeddings.py \
+  --config configs/eyepacs_resized_dinov2.yaml \
+  --subset 2000 \
+  --device cuda
+```
+
+Kaggle run with portable manifest paths:
+
+```bash
+python scripts/02_extract_embeddings.py \
+  --config configs/eyepacs_resized_dinov2.yaml \
+  --manifest outputs/manifests/image_manifest.parquet \
+  --image-root /kaggle/input/diabetic-retinopathy-resized \
+  --subset 2000 \
+  --device cuda
+```
+
+Required progression:
+
+1. `--subset 2000`
+2. `--subset 10000`
+3. `--subset all`
+
+Expected outputs:
+
+- `outputs/embeddings/{dataset}_{model}_{preprocess}_embeddings.npy`
+- `outputs/embeddings/{dataset}_{model}_{preprocess}_index.parquet`
+- `outputs/embeddings/{dataset}_{model}_{preprocess}_meta.json`
+
+The canonical first run is `configs/eyepacs_resized_dinov2.yaml`. Use
+`configs/eyepacs_cropped_dinov2.yaml` for the preprocessing comparison after the
+baseline is validated.
+
 ## Setup
 
 ```bash

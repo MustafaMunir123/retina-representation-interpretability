@@ -42,6 +42,7 @@ def compute_quality_features(
     limit: int | None = None,
     shard_id: int | None = None,
     num_shards: int | None = None,
+    image_root: str | Path | None = None,
     make_figures: bool = True,
     samples_per_grid: int = 12,
 ) -> dict[str, Any]:
@@ -49,6 +50,7 @@ def compute_quality_features(
     pd = _import_pandas()
     manifest = pd.read_parquet(manifest_path)
     manifest = _select_usable_rows(manifest)
+    manifest = _resolve_manifest_image_paths(manifest, image_root=image_root)
     manifest = _select_shard(manifest, shard_id=shard_id, num_shards=num_shards)
     if limit is not None:
         manifest = manifest.head(limit)
@@ -261,10 +263,32 @@ def _select_usable_rows(manifest: Any) -> Any:
     selected = manifest
     if "usable" in selected.columns:
         selected = selected[selected["usable"]]
-    if "image_path" not in selected.columns:
-        raise ValueError("Manifest must include an image_path column.")
-    selected = selected[selected["image_path"].notna() & (selected["image_path"] != "")]
+    if "image_path" not in selected.columns and "relative_image_path" not in selected.columns:
+        raise ValueError("Manifest must include image_path or relative_image_path.")
+    if "relative_image_path" in selected.columns:
+        rel_mask = selected["relative_image_path"].notna() & (selected["relative_image_path"] != "")
+        if "image_path" in selected.columns:
+            abs_mask = selected["image_path"].notna() & (selected["image_path"] != "")
+            selected = selected[rel_mask | abs_mask]
+        else:
+            selected = selected[rel_mask]
+    else:
+        selected = selected[selected["image_path"].notna() & (selected["image_path"] != "")]
     return selected.reset_index(drop=True)
+
+
+def _resolve_manifest_image_paths(manifest: Any, image_root: str | Path | None) -> Any:
+    if "relative_image_path" not in manifest.columns or image_root is None:
+        return manifest
+    root = Path(image_root)
+    manifest = manifest.copy()
+    manifest["image_path"] = [
+        str(root / str(record["relative_image_path"]))
+        if record.get("relative_image_path")
+        else str(record.get("image_path", ""))
+        for record in manifest.to_dict(orient="records")
+    ]
+    return manifest
 
 
 def _select_shard(manifest: Any, *, shard_id: int | None, num_shards: int | None) -> Any:
