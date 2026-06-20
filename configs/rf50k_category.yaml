@@ -1,0 +1,32 @@
+project:
+  name: retina-subspace-audit
+  seed: 42
+
+dataset:
+  name: rf50k
+  source: gautamrajiitk/retinal-fundus-image-50k
+  image_root: data/raw/retinal-fundus-image-50k
+  label_source: folder
+  split_source: folder
+  patient_id_from_filename: false
+  laterality_from_filename: false
+
+preprocess:
+  variant: resized
+  image_size: 224
+
+model:
+  name: dinov2
+  checkpoint: facebook/dinov2-base
+  embedding_layer: cls
+  batch_size: 64
+  num_workers: 4
+  mixed_precision: true
+
+outputs:
+  manifest_dir: outputs/manifests
+  quality_dir: outputs/quality
+  embedding_dir: outputs/embeddings
+  direction_dir: outputs/directions
+  table_dir: outputs/tables
+  figure_dir: outputs/figures

@@ -1,0 +1,33 @@
+project:
+  name: retina-subspace-audit
+  seed: 42
+
+dataset:
+  name: eyepacs_resized
+  source: tanlikesmath/diabetic-retinopathy-resized
+  image_root: data/raw/diabetic-retinopathy-resized/resized_train
+  label_csv: data/raw/diabetic-retinopathy-resized/trainLabels.csv
+  image_id_column: image
+  label_column: level
+  patient_id_from_filename: true
+  laterality_from_filename: true
+
+preprocess:
+  variant: resized
+  image_size: 224
+
+model:
+  name: dinov2
+  checkpoint: facebook/dinov2-base
+  embedding_layer: cls
+  batch_size: 64
+  num_workers: 4
+  mixed_precision: true
+
+outputs:
+  manifest_dir: outputs/manifests
+  quality_dir: outputs/quality
+  embedding_dir: outputs/embeddings
+  direction_dir: outputs/directions
+  table_dir: outputs/tables
+  figure_dir: outputs/figures
