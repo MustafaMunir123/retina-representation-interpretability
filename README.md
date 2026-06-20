@@ -45,6 +45,36 @@ The audit supports:
 - CSV-label DR severity datasets such as EyePACS-style resized data and APTOS
 - folder-label disease-category datasets such as RF50K
 
+## Phase 2 Status
+
+Phase 2 implements CPU-side pixel-derived bottleneck features from the Phase 1
+manifest.
+
+Smoke test:
+
+```bash
+python scripts/01_compute_quality_features.py \
+  --manifest outputs/manifests/image_manifest.parquet \
+  --limit 100
+```
+
+Full run:
+
+```bash
+python scripts/01_compute_quality_features.py \
+  --manifest outputs/manifests/image_manifest.parquet
+```
+
+Expected outputs:
+
+- `outputs/quality/quality_features.parquet`
+- `outputs/quality/quality_summary.json`
+- `outputs/figures/quality/histograms/*.png`
+- `outputs/figures/quality/sample_grids/*.png`
+
+The Phase 2 gate passes when at least three bottleneck features have meaningful
+spread and the minimum set of sharpness, brightness, and contrast is usable.
+
 ## Setup
 
 ```bash
