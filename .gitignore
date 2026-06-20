@@ -217,4 +217,16 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+# Project data and generated outputs
+data/raw/
+data/checkpoints/
+outputs/**/*.json
+outputs/**/*.csv
+outputs/**/*.parquet
+outputs/**/*.npy
+outputs/**/*.npz
+outputs/**/*.png
+outputs/**/*.pdf
+!outputs/**/.gitkeep
+
 docs

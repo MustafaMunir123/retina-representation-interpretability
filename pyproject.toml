@@ -8,7 +8,12 @@ version = "0.1.0"
 description = "Lightweight subspace audit for frozen retinal fundus embeddings."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+  "pandas",
+  "pyarrow",
+  "pillow",
+  "pyyaml",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

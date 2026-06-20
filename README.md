@@ -20,6 +20,31 @@ Phase 0 establishes the reproducible project scaffold:
 - paper skeleton under `paper/`
 - structured planning docs in the separate docs repo under `docs/`
 
+## Phase 1 Status
+
+Phase 1 implements dataset access and manifest auditing.
+
+Run the primary EyePACS-style audit after downloading data to the paths in the
+config:
+
+```bash
+python scripts/00_audit_dataset.py --config configs/eyepacs_resized_dinov2.yaml
+```
+
+Expected outputs:
+
+- `outputs/manifests/dataset_summary.json`
+- `outputs/manifests/image_manifest.parquet`
+- `outputs/manifests/label_counts.csv`
+- `outputs/manifests/missing_files.csv`
+- `outputs/manifests/corrupt_images.csv`
+- `outputs/manifests/filename_parse_report.json`
+
+The audit supports:
+
+- CSV-label DR severity datasets such as EyePACS-style resized data and APTOS
+- folder-label disease-category datasets such as RF50K
+
 ## Setup
 
 ```bash
