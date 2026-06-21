@@ -24,6 +24,7 @@ DEFAULT_INCLUDE_PATHS = (
     "outputs/quality",
     "outputs/embeddings",
     "outputs/directions",
+    "outputs/ablation",
     "outputs/probes",
     "outputs/tables",
     "outputs/figures/quality",

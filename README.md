@@ -178,6 +178,37 @@ Expected outputs:
 - `outputs/tables/projection_ratios.csv`
 - `outputs/tables/direction_stability.csv`
 
+## Phase 6 Status
+
+Phase 6 implements a lightweight residualization intervention. It removes a
+selected bottleneck subspace from cached embeddings, then reruns probes and
+direction analysis on the residualized embeddings.
+
+Default intervention:
+
+```text
+remove sharpness + laterality
+```
+
+Run after Phase 5:
+
+```bash
+python scripts/05_run_ablation.py \
+  --embeddings outputs/embeddings/eyepacs_resized_dinov2_resized_10k_embeddings.npy \
+  --index outputs/embeddings/eyepacs_resized_dinov2_resized_10k_index.parquet \
+  --directions outputs/directions/eyepacs_resized_dinov2_resized_10k_directions.npz \
+  --quality outputs/quality/quality_features.parquet \
+  --baseline-prefix eyepacs_resized_dinov2_resized_10k \
+  --remove-directions sharpness laterality
+```
+
+Expected outputs:
+
+- `outputs/ablation/{intervention_run}_embeddings.npy`
+- `outputs/ablation/{intervention_run}_index.parquet`
+- `outputs/ablation/{intervention_run}_ablation_meta.json`
+- `outputs/tables/improvement_summary.csv`
+
 ## Hugging Face Data Sync
 
 Raw data and generated data artifacts are not committed to git. To mirror them
@@ -196,9 +227,10 @@ python scripts/sync_hf_dataset.py download \
 ```
 
 The default sync includes processed artifacts under `outputs/manifests`,
-`outputs/quality`, `outputs/embeddings`, `outputs/directions`, `outputs/probes`,
-`outputs/tables`, and the quality/probe figure folders. Raw images should come
-from the original Kaggle dataset, not this Hugging Face mirror.
+`outputs/quality`, `outputs/embeddings`, `outputs/directions`,
+`outputs/ablation`, `outputs/probes`, `outputs/tables`, and the quality/probe
+figure folders. Raw images should come from the original Kaggle dataset, not
+this Hugging Face mirror.
 
 ## Setup
 
