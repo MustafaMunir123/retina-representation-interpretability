@@ -149,6 +149,35 @@ Expected outputs:
 - `outputs/tables/probe_comparison.csv`
 - `outputs/figures/probes/{run}_probe_auc.png`
 
+## Phase 5 Status
+
+Phase 5 implements disease and bottleneck direction analysis. It extracts
+mean-difference unit directions, computes pairwise cosine overlap, reports
+disease-to-bottleneck projection ratios, and estimates direction stability by
+bootstrap resampling.
+
+Run after Phase 4 validates the 10k embeddings:
+
+```bash
+python scripts/03_compute_directions.py \
+  --embeddings outputs/embeddings/eyepacs_resized_dinov2_resized_10k_embeddings.npy \
+  --index outputs/embeddings/eyepacs_resized_dinov2_resized_10k_index.parquet \
+  --quality outputs/quality/quality_features.parquet \
+  --output-prefix eyepacs_resized_dinov2_resized_10k
+```
+
+Expected outputs:
+
+- `outputs/directions/{run}_directions.npz`
+- `outputs/directions/{run}_direction_summary.csv`
+- `outputs/directions/{run}_cosine_matrix.csv`
+- `outputs/directions/{run}_projection_ratios.csv`
+- `outputs/directions/{run}_direction_stability.csv`
+- `outputs/directions/{run}_direction_meta.json`
+- `outputs/tables/cosine_matrix.csv`
+- `outputs/tables/projection_ratios.csv`
+- `outputs/tables/direction_stability.csv`
+
 ## Hugging Face Data Sync
 
 Raw data and generated data artifacts are not committed to git. To mirror them
@@ -167,9 +196,9 @@ python scripts/sync_hf_dataset.py download \
 ```
 
 The default sync includes processed artifacts under `outputs/manifests`,
-`outputs/quality`, `outputs/embeddings`, `outputs/probes`, `outputs/tables`, and
-the quality/probe figure folders. Raw images should come from the original
-Kaggle dataset, not this Hugging Face mirror.
+`outputs/quality`, `outputs/embeddings`, `outputs/directions`, `outputs/probes`,
+`outputs/tables`, and the quality/probe figure folders. Raw images should come
+from the original Kaggle dataset, not this Hugging Face mirror.
 
 ## Setup
 

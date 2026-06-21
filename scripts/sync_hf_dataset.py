@@ -23,6 +23,7 @@ DEFAULT_INCLUDE_PATHS = (
     "outputs/manifests",
     "outputs/quality",
     "outputs/embeddings",
+    "outputs/directions",
     "outputs/probes",
     "outputs/tables",
     "outputs/figures/quality",
