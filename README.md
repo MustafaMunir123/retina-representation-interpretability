@@ -124,6 +124,31 @@ The canonical first run is `configs/eyepacs_resized_dinov2.yaml`. Use
 `configs/eyepacs_cropped_dinov2.yaml` for the preprocessing comparison after the
 baseline is validated.
 
+## Phase 4 Status
+
+Phase 4 implements linear probe sanity checks for disease and bottleneck signal
+in cached embeddings.
+
+Run probes on a 10k embedding artifact:
+
+```bash
+python scripts/04_run_probes.py \
+  --embeddings outputs/embeddings/eyepacs_resized_dinov2_resized_10k_embeddings.npy \
+  --index outputs/embeddings/eyepacs_resized_dinov2_resized_10k_index.parquet \
+  --quality outputs/quality/quality_features.parquet \
+  --output-prefix eyepacs_resized_dinov2_resized_10k
+```
+
+Expected outputs:
+
+- `outputs/probes/{run}_probe_metrics.csv`
+- `outputs/probes/{run}_probe_coefficients.csv`
+- `outputs/probes/{run}_probe_predictions.parquet`
+- `outputs/probes/{run}_probe_meta.json`
+- `outputs/tables/probe_metrics.csv`
+- `outputs/tables/probe_comparison.csv`
+- `outputs/figures/probes/{run}_probe_auc.png`
+
 ## Hugging Face Data Sync
 
 Raw data and generated data artifacts are not committed to git. To mirror them
@@ -141,9 +166,10 @@ python scripts/sync_hf_dataset.py download \
   --repo-id mm2036/retina-representation-interpretability
 ```
 
-The default sync includes `outputs/manifests`, `outputs/quality`, and
-`outputs/figures/quality`. Raw images should come from the original Kaggle
-dataset, not this Hugging Face mirror.
+The default sync includes processed artifacts under `outputs/manifests`,
+`outputs/quality`, `outputs/embeddings`, `outputs/probes`, `outputs/tables`, and
+the quality/probe figure folders. Raw images should come from the original
+Kaggle dataset, not this Hugging Face mirror.
 
 ## Setup
 

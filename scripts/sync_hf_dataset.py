@@ -9,9 +9,9 @@ import shutil
 import sys
 import tarfile
 import tempfile
+from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
@@ -22,7 +22,11 @@ DEFAULT_ARCHIVE_DIR = "_archives"
 DEFAULT_INCLUDE_PATHS = (
     "outputs/manifests",
     "outputs/quality",
+    "outputs/embeddings",
+    "outputs/probes",
+    "outputs/tables",
     "outputs/figures/quality",
+    "outputs/figures/probes",
 )
 EXCLUDED_NAMES = {".DS_Store", ".gitkeep"}
 
@@ -65,7 +69,10 @@ def main() -> int:
         "--mode",
         choices=("archive", "files"),
         default="files",
-        help="Upload exact individual files or archive shards. Use archive for large raw-data mirrors.",
+        help=(
+            "Upload exact individual files or archive shards. "
+            "Use archive for large raw-data mirrors."
+        ),
     )
     upload.add_argument(
         "--archive-max-bytes",
@@ -151,7 +158,9 @@ def upload_dataset(args: argparse.Namespace) -> None:
         print(f"UPLOAD manifest -> {args.manifest_path}")
         return
 
-    api.create_repo(repo_id=args.repo_id, repo_type="dataset", private=True, exist_ok=True, token=token)
+    api.create_repo(
+        repo_id=args.repo_id, repo_type="dataset", private=True, exist_ok=True, token=token
+    )
     if args.mode == "archive":
         upload_archives(api, token, args, records)
         return
@@ -209,7 +218,8 @@ def download_dataset(args: argparse.Namespace) -> None:
                     local_current += 1
         print(f"Local files present: {local_present}")
         print(f"Local files already current: {local_current}")
-        print(f"Files that would download: {len(files) - local_current if not args.force else len(files)}")
+        would_download = len(files) - local_current if not args.force else len(files)
+        print(f"Files that would download: {would_download}")
         for entry in files[:20]:
             destination = project_root / entry["relative_path"]
             action = (
@@ -300,7 +310,9 @@ def build_manifest(
     }
 
 
-def upload_archives(api, token: str | None, args: argparse.Namespace, records: list[FileRecord]) -> None:
+def upload_archives(
+    api, token: str | None, args: argparse.Namespace, records: list[FileRecord]
+) -> None:
     with tempfile.TemporaryDirectory(prefix="retina_hf_archives_") as staging_dir:
         staging_root = Path(staging_dir)
         archives = create_archive_shards(staging_root, records, args.archive_max_bytes)
@@ -401,7 +413,10 @@ def download_archives(
     for archive in manifest.get("archives", []):
         archive_repo_path = str(archive["repo_path"])
         entries = files_by_archive.get(archive_repo_path, [])
-        if not args.force and entries and all(local_entry_current(project_root, entry) for entry in entries):
+        archive_is_current = entries and all(
+            local_entry_current(project_root, entry) for entry in entries
+        )
+        if not args.force and archive_is_current:
             print(f"archive current locally, skipping {archive_repo_path}")
             continue
         cached = Path(
