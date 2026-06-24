@@ -1,0 +1,38 @@
+{
+  "artifacts": {
+    "combined_cosine_matrix": "outputs/tables/cosine_matrix.csv",
+    "combined_direction_stability": "outputs/tables/direction_stability.csv",
+    "combined_direction_summary": "outputs/tables/direction_summary.csv",
+    "combined_projection_ratios": "outputs/tables/projection_ratios.csv",
+    "cosine_matrix": "outputs/directions/eyepacs_resized_dinov2_resized_10k_cosine_matrix.csv",
+    "direction_stability": "outputs/directions/eyepacs_resized_dinov2_resized_10k_direction_stability.csv",
+    "direction_summary": "outputs/directions/eyepacs_resized_dinov2_resized_10k_direction_summary.csv",
+    "directions": "outputs/directions/eyepacs_resized_dinov2_resized_10k_directions.npz",
+    "metadata": "outputs/directions/eyepacs_resized_dinov2_resized_10k_direction_meta.json",
+    "projection_ratios": "outputs/directions/eyepacs_resized_dinov2_resized_10k_projection_ratios.csv"
+  },
+  "directions": [
+    "any_dr",
+    "referable_dr",
+    "severe_dr",
+    "sharpness",
+    "brightness",
+    "contrast",
+    "black_border",
+    "field_of_view",
+    "laterality"
+  ],
+  "embedding_dim": 768,
+  "embeddings": "outputs/embeddings/eyepacs_resized_dinov2_resized_10k_embeddings.npy",
+  "index": "outputs/embeddings/eyepacs_resized_dinov2_resized_10k_index.parquet",
+  "min_class_count": 20,
+  "n_bootstrap": 50,
+  "num_directions": 9,
+  "num_embedding_rows": 10000,
+  "num_joined_rows": 10000,
+  "quality": "outputs/quality/quality_features.parquet",
+  "random_state": 17,
+  "run": "eyepacs_resized_dinov2_resized_10k",
+  "runtime_seconds": 0.744,
+  "skipped_targets": []
+}

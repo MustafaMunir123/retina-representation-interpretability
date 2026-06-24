@@ -1,0 +1,23 @@
+{
+  "artifacts": {
+    "coefficients": "outputs/probes/eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality_probe_coefficients.csv",
+    "combined_metrics": "outputs/tables/probe_metrics.csv",
+    "comparison": "outputs/tables/probe_comparison.csv",
+    "figure": "outputs/figures/probes/eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality_probe_auc.png",
+    "metadata": "outputs/probes/eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality_probe_meta.json",
+    "metrics": "outputs/probes/eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality_probe_metrics.csv",
+    "predictions": "outputs/probes/eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality_probe_predictions.parquet"
+  },
+  "embedding_dim": 768,
+  "embeddings": "outputs/ablation/eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality_embeddings.npy",
+  "index": "outputs/ablation/eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality_index.parquet",
+  "num_embedding_rows": 10000,
+  "num_joined_rows": 10000,
+  "num_targets": 9,
+  "quality": "outputs/quality/quality_features.parquet",
+  "random_state": 17,
+  "run": "eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality",
+  "runtime_seconds": 37.364,
+  "skipped_targets": [],
+  "test_size": 0.2
+}

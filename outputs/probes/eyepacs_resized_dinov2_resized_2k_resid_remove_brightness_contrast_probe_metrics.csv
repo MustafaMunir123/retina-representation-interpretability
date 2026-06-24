@@ -1,0 +1,10 @@
+run,target,target_family,positive_class,negative_class,auc,balanced_accuracy,accuracy,train_positive,train_negative,test_positive,test_negative,n_train,n_test,split_strategy
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,any_dr,disease,true,false,0.652323689834455,0.6499473700998373,0.7175,401,1199,107,293,1600,400,group_shuffle
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,referable_dr,disease,true,false,0.6667413632119514,0.6419234360410832,0.7675,295,1305,85,315,1600,400,group_shuffle
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,severe_dr,disease,true,false,0.8226221079691516,0.6235101659266183,0.955,68,1532,11,389,1600,400,group_shuffle
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,sharpness_high_vs_low,quality,high,low,0.9988183859151601,0.989247311827957,0.9891304347826086,374,420,91,93,794,184,group_shuffle
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,brightness_high_vs_low,quality,high,low,0.09213032581453634,0.19523809523809524,0.195,383,395,95,105,778,200,group_shuffle
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,contrast_high_vs_low,quality,high,low,0.08811881188118813,0.16435643564356436,0.16417910447761194,422,387,101,100,809,201,group_shuffle
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,black_border_high_vs_low,quality,high,low,0.9974259974259974,0.9852914138628424,0.9856459330143541,417,399,111,98,816,209,group_shuffle
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,field_of_view_high_vs_low,quality,high,low,1.0,1.0,1.0,403,409,94,118,812,212,group_shuffle
+eyepacs_resized_dinov2_resized_2k_resid_remove_brightness_contrast,laterality_right_vs_left,anatomy,right,left,0.7981249999999999,0.74,0.74,800,800,200,200,1600,400,group_shuffle

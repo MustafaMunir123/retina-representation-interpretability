@@ -230,5 +230,19 @@ outputs/**/*.png
 outputs/**/*.pdf
 !outputs/**/.gitkeep
 
+# Version small analytical artifacts used in reports and paper drafts.
+!outputs/tables/*.csv
+!outputs/manifests/*.csv
+!outputs/manifests/*.json
+!outputs/quality/quality_summary.json
+!outputs/directions/*.csv
+!outputs/directions/*.json
+!outputs/directions/*.npz
+!outputs/probes/*_probe_metrics.csv
+!outputs/probes/*_probe_meta.json
+!outputs/ablation/*_ablation_meta.json
+!outputs/figures/probes/*.png
+!outputs/figures/quality/histograms/*.png
+
 docs
 kaggle/

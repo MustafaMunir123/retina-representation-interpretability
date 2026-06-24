@@ -1,0 +1,80 @@
+{
+  "dropped_features": [],
+  "feature_stats": {
+    "black_border_fraction": {
+      "iqr": 0.2703608991810029,
+      "max": 1.0,
+      "median": 0.33377710978190106,
+      "min": 1.3987223307291666e-05,
+      "n_unique": 27464,
+      "q25": 0.254157182238287,
+      "q75": 0.5245180814192899
+    },
+    "brightness_mean": {
+      "iqr": 48.928083419799805,
+      "max": 251.77044677734375,
+      "median": 98.05801010131836,
+      "min": 3.038060426712036,
+      "n_unique": 35091,
+      "q25": 74.08819580078125,
+      "q75": 123.01627922058105
+    },
+    "contrast_std": {
+      "iqr": 10.823952198028564,
+      "max": 99.10566711425781,
+      "median": 25.57265853881836,
+      "min": 0.7607041001319885,
+      "n_unique": 35076,
+      "q25": 20.290574073791504,
+      "q75": 31.11452627182007
+    },
+    "fundus_area_fraction": {
+      "iqr": 0.2703566097410322,
+      "max": 0.9999860127766927,
+      "median": 0.666222890218099,
+      "min": 0.015034993489583334,
+      "n_unique": 27465,
+      "q25": 0.4754862080206808,
+      "q75": 0.745842817761713
+    },
+    "fundus_radius_estimate": {
+      "iqr": 83.13641647733624,
+      "max": 512.387897500144,
+      "median": 400.5044717969457,
+      "min": 61.34896978953388,
+      "n_unique": 26520,
+      "q25": 325.36158300116,
+      "q75": 408.49799947849624
+    },
+    "sharpness_laplacian_var": {
+      "iqr": 40.974801540374756,
+      "max": 2649.063720703125,
+      "median": 21.981411933898926,
+      "min": 0.1401100754737854,
+      "n_unique": 35113,
+      "q25": 11.225707530975342,
+      "q75": 52.2005090713501
+    }
+  },
+  "features_path": "outputs/quality/quality_features.parquet",
+  "figure_dir": "outputs/figures/quality",
+  "go_no_go": {
+    "checks": {
+      "at_least_three_features_with_spread": true,
+      "minimum_bottleneck_set_has_spread": true
+    },
+    "decision": "GO"
+  },
+  "kept_features": [
+    "sharpness_laplacian_var",
+    "brightness_mean",
+    "contrast_std",
+    "black_border_fraction",
+    "fundus_area_fraction",
+    "fundus_radius_estimate"
+  ],
+  "limit": null,
+  "num_images": 35126,
+  "num_shards": null,
+  "shard_id": null
+}

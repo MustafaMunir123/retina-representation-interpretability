@@ -1,0 +1,29 @@
+{
+  "corrupt_images": 0,
+  "dataset": "eyepacs_resized",
+  "duplicate_image_ids": 0,
+  "go_no_go": {
+    "checks": {
+      "at_least_2000_usable_images": true,
+      "at_least_95_percent_readable": true,
+      "labels_are_valid_0_to_4": true,
+      "laterality_parse_available": true,
+      "patient_id_parse_available": true
+    },
+    "decision": "GO"
+  },
+  "image_root": "/Users/aaliyan/aaliyan/retina-representation-interpretability/data/raw/diabetic-retinopathy-resized/resized_train",
+  "label_csv": "/Users/aaliyan/aaliyan/retina-representation-interpretability/data/raw/diabetic-retinopathy-resized/trainLabels.csv",
+  "label_values_are_0_to_4": true,
+  "laterality_parse_success": 1.0,
+  "matched_image_label_rows": 35126,
+  "missing_files": 0,
+  "patient_id_parse_success": 1.0,
+  "readable_fraction_of_labeled_rows": 1.0,
+  "source": "tanlikesmath/diabetic-retinopathy-resized",
+  "task_type": "dr_severity",
+  "total_csv_rows": 35126,
+  "total_image_files": 35126,
+  "usable_rows": 35126,
+  "valid_label_rows": 35126
+}
