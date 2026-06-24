@@ -221,6 +221,7 @@ __marimo__/
 data/raw/
 data/checkpoints/
 outputs/kaggle_runs/
+outputs/robustness/
 outputs/**/*.json
 outputs/**/*.csv
 outputs/**/*.parquet
@@ -242,6 +243,7 @@ outputs/**/*.pdf
 !outputs/probes/*_probe_meta.json
 !outputs/ablation/*_ablation_meta.json
 !outputs/figures/probes/*.png
+!outputs/figures/paper/*.png
 !outputs/figures/quality/histograms/*.png
 
 docs
