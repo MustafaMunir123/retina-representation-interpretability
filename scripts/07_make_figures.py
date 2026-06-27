@@ -236,12 +236,12 @@ def _save_residualization_figure(probes, figure_dir: Path) -> Path:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build publication figures from result tables.")
+    parser = argparse.ArgumentParser(description="Build submission figures from result tables.")
     parser.add_argument("--table-dir", default="outputs/tables", help="Directory with result CSVs.")
     parser.add_argument(
         "--figure-dir",
-        default="outputs/figures/paper",
-        help="Output directory for paper-facing figures.",
+        default="outputs/figures/submission",
+        help="Output directory for submission figures.",
     )
     args = parser.parse_args()
     _setup_matplotlib()

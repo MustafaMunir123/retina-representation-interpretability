@@ -17,7 +17,7 @@ Phase 0 establishes the reproducible project scaffold:
 - runnable script entry points under `scripts/`
 - dataset/model configs under `configs/`
 - stable output locations under `outputs/`
-- paper skeleton under `paper/`
+- submission draft materials in the separate docs repo under `docs/`
 - structured planning docs in the separate docs repo under `docs/`
 
 ## Phase 1 Status

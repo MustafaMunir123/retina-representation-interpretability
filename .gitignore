@@ -231,7 +231,7 @@ outputs/**/*.png
 outputs/**/*.pdf
 !outputs/**/.gitkeep
 
-# Version small analytical artifacts used in reports and paper drafts.
+# Version small analytical artifacts used in reports and submissions.
 !outputs/tables/*.csv
 !outputs/manifests/*.csv
 !outputs/manifests/*.json
@@ -243,7 +243,7 @@ outputs/**/*.pdf
 !outputs/probes/*_probe_meta.json
 !outputs/ablation/*_ablation_meta.json
 !outputs/figures/probes/*.png
-!outputs/figures/paper/*.png
+!outputs/figures/submission/*.png
 !outputs/figures/quality/histograms/*.png
 
 docs
