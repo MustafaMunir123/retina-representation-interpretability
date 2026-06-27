@@ -1,0 +1,23 @@
+{
+  "artifacts": {
+    "coefficients": "outputs/probes/eyepacs_resized_dinov2_resized_full_probe_coefficients.csv",
+    "combined_metrics": "outputs/tables/probe_metrics.csv",
+    "comparison": "outputs/tables/probe_comparison.csv",
+    "figure": "outputs/figures/probes/eyepacs_resized_dinov2_resized_full_probe_auc.png",
+    "metadata": "outputs/probes/eyepacs_resized_dinov2_resized_full_probe_meta.json",
+    "metrics": "outputs/probes/eyepacs_resized_dinov2_resized_full_probe_metrics.csv",
+    "predictions": "outputs/probes/eyepacs_resized_dinov2_resized_full_probe_predictions.parquet"
+  },
+  "embedding_dim": 768,
+  "embeddings": "outputs/embeddings/eyepacs_resized_dinov2_resized_full_embeddings.npy",
+  "index": "outputs/embeddings/eyepacs_resized_dinov2_resized_full_index.parquet",
+  "num_embedding_rows": 35126,
+  "num_joined_rows": 35126,
+  "num_targets": 9,
+  "quality": "outputs/quality/quality_features.parquet",
+  "random_state": 17,
+  "run": "eyepacs_resized_dinov2_resized_full",
+  "runtime_seconds": 81.933,
+  "skipped_targets": [],
+  "test_size": 0.2
+}

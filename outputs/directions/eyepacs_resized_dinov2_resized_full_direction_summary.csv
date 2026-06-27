@@ -1,0 +1,10 @@
+run,direction,direction_family,positive_class,negative_class,positive_count,negative_count,raw_norm
+eyepacs_resized_dinov2_resized_full,any_dr,disease,true,false,9316,25810,3.13628888130188
+eyepacs_resized_dinov2_resized_full,referable_dr,disease,true,false,6873,28253,4.281256675720215
+eyepacs_resized_dinov2_resized_full,severe_dr,disease,true,false,1581,33545,8.209986686706543
+eyepacs_resized_dinov2_resized_full,sharpness,quality,high,low,8782,8782,9.979726791381836
+eyepacs_resized_dinov2_resized_full,brightness,quality,high,low,8782,8782,10.334108352661133
+eyepacs_resized_dinov2_resized_full,contrast,quality,high,low,8782,8782,8.061787605285645
+eyepacs_resized_dinov2_resized_full,black_border,quality,high,low,8782,8782,12.567914962768555
+eyepacs_resized_dinov2_resized_full,field_of_view,quality,high,low,8782,8782,12.568827629089355
+eyepacs_resized_dinov2_resized_full,laterality,anatomy,right,left,17563,17563,1.8221299648284912
