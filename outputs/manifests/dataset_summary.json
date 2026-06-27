@@ -12,8 +12,8 @@
     },
     "decision": "GO"
   },
-  "image_root": "/Users/aaliyan/aaliyan/retina-representation-interpretability/data/raw/diabetic-retinopathy-resized/resized_train",
-  "label_csv": "/Users/aaliyan/aaliyan/retina-representation-interpretability/data/raw/diabetic-retinopathy-resized/trainLabels.csv",
+  "image_root": "/Users/mustafa.munir/Personal/retina-representation-interpretability/data/raw/diabetic-retinopathy-resized/resized_train",
+  "label_csv": "/Users/mustafa.munir/Personal/retina-representation-interpretability/data/raw/diabetic-retinopathy-resized/trainLabels.csv",
   "label_values_are_0_to_4": true,
   "laterality_parse_success": 1.0,
   "matched_image_label_rows": 35126,

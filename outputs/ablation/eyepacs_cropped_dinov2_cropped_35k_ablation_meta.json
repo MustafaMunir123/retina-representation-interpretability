@@ -1,0 +1,85 @@
+{
+  "artifacts": {
+    "direction_metadata": {
+      "artifacts": {
+        "combined_cosine_matrix": "outputs/tables/cosine_matrix.csv",
+        "combined_direction_stability": "outputs/tables/direction_stability.csv",
+        "combined_direction_summary": "outputs/tables/direction_summary.csv",
+        "combined_projection_ratios": "outputs/tables/projection_ratios.csv",
+        "cosine_matrix": "outputs/directions/eyepacs_cropped_dinov2_cropped_35k_cosine_matrix.csv",
+        "direction_stability": "outputs/directions/eyepacs_cropped_dinov2_cropped_35k_direction_stability.csv",
+        "direction_summary": "outputs/directions/eyepacs_cropped_dinov2_cropped_35k_direction_summary.csv",
+        "directions": "outputs/directions/eyepacs_cropped_dinov2_cropped_35k_directions.npz",
+        "metadata": "outputs/directions/eyepacs_cropped_dinov2_cropped_35k_direction_meta.json",
+        "projection_ratios": "outputs/directions/eyepacs_cropped_dinov2_cropped_35k_projection_ratios.csv"
+      },
+      "directions": [
+        "any_dr",
+        "referable_dr",
+        "severe_dr",
+        "sharpness",
+        "brightness",
+        "contrast",
+        "black_border",
+        "field_of_view",
+        "laterality"
+      ],
+      "embedding_dim": 768,
+      "embeddings": "outputs/ablation/eyepacs_cropped_dinov2_cropped_35k_embeddings.npy",
+      "index": "outputs/ablation/eyepacs_cropped_dinov2_cropped_35k_index.parquet",
+      "min_class_count": 20,
+      "n_bootstrap": 50,
+      "num_directions": 9,
+      "num_embedding_rows": 35126,
+      "num_joined_rows": 35126,
+      "quality": "outputs/quality/quality_features.parquet",
+      "random_state": 17,
+      "run": "eyepacs_cropped_dinov2_cropped_35k",
+      "runtime_seconds": 2.504,
+      "skipped_targets": []
+    },
+    "embeddings": "outputs/ablation/eyepacs_cropped_dinov2_cropped_35k_embeddings.npy",
+    "improvement_summary": "outputs/tables/improvement_summary.csv",
+    "index": "outputs/ablation/eyepacs_cropped_dinov2_cropped_35k_index.parquet",
+    "metadata": "outputs/ablation/eyepacs_cropped_dinov2_cropped_35k_ablation_meta.json",
+    "probe_metadata": {
+      "artifacts": {
+        "coefficients": "outputs/probes/eyepacs_cropped_dinov2_cropped_35k_probe_coefficients.csv",
+        "combined_metrics": "outputs/tables/probe_metrics.csv",
+        "comparison": "outputs/tables/probe_comparison.csv",
+        "figure": "outputs/figures/probes/eyepacs_cropped_dinov2_cropped_35k_probe_auc.png",
+        "metadata": "outputs/probes/eyepacs_cropped_dinov2_cropped_35k_probe_meta.json",
+        "metrics": "outputs/probes/eyepacs_cropped_dinov2_cropped_35k_probe_metrics.csv",
+        "predictions": "outputs/probes/eyepacs_cropped_dinov2_cropped_35k_probe_predictions.parquet"
+      },
+      "embedding_dim": 768,
+      "embeddings": "outputs/ablation/eyepacs_cropped_dinov2_cropped_35k_embeddings.npy",
+      "index": "outputs/ablation/eyepacs_cropped_dinov2_cropped_35k_index.parquet",
+      "num_embedding_rows": 35126,
+      "num_joined_rows": 35126,
+      "num_targets": 9,
+      "quality": "outputs/quality/quality_features.parquet",
+      "random_state": 17,
+      "run": "eyepacs_cropped_dinov2_cropped_35k",
+      "runtime_seconds": 70.16,
+      "skipped_targets": [],
+      "test_size": 0.2
+    }
+  },
+  "baseline_run": "eyepacs_cropped_dinov2_cropped_35k",
+  "directions": "outputs/directions/eyepacs_cropped_dinov2_cropped_35k_directions.npz",
+  "embedding_dim": 768,
+  "embeddings": "outputs/embeddings/eyepacs_cropped_dinov2_cropped_35k_embeddings.npy",
+  "evaluate": true,
+  "index": "outputs/embeddings/eyepacs_cropped_dinov2_cropped_35k_index.parquet",
+  "intervention": "remove_sharpness_laterality",
+  "intervention_run": "eyepacs_cropped_dinov2_cropped_35k",
+  "num_images": 35126,
+  "quality": "outputs/quality/quality_features.parquet",
+  "removed_directions": [
+    "sharpness",
+    "laterality"
+  ],
+  "runtime_seconds": 72.872,
+  "subspace_rank": 2
+}

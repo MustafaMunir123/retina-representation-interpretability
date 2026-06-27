@@ -17,6 +17,15 @@ eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality,contrast,qu
 eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality,black_border,quality,high,low,2528,2520,10.043903350830078
 eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality,field_of_view,quality,high,low,2520,2529,10.044936180114746
 eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality,laterality,anatomy,right,left,5000,5000,9.43831037147902e-05
+eyepacs_cropped_dinov2_cropped_35k,any_dr,disease,true,false,9316,25810,2.9528164863586426
+eyepacs_cropped_dinov2_cropped_35k,referable_dr,disease,true,false,6873,28253,4.019669055938721
+eyepacs_cropped_dinov2_cropped_35k,severe_dr,disease,true,false,1581,33545,7.910181045532227
+eyepacs_cropped_dinov2_cropped_35k,sharpness,quality,high,low,8782,8782,0.0001170997566077
+eyepacs_cropped_dinov2_cropped_35k,brightness,quality,high,low,8782,8782,8.142882347106934
+eyepacs_cropped_dinov2_cropped_35k,contrast,quality,high,low,8782,8782,5.679960250854492
+eyepacs_cropped_dinov2_cropped_35k,black_border,quality,high,low,8782,8782,9.923256874084473
+eyepacs_cropped_dinov2_cropped_35k,field_of_view,quality,high,low,8782,8782,9.925508499145508
+eyepacs_cropped_dinov2_cropped_35k,laterality,anatomy,right,left,17563,17563,0.0001680929271969
 eyepacs_resized_dinov2_resized_10k,any_dr,disease,true,false,2743,7257,3.0704410076141357
 eyepacs_resized_dinov2_resized_10k,referable_dr,disease,true,false,2012,7988,4.274580478668213
 eyepacs_resized_dinov2_resized_10k,severe_dr,disease,true,false,427,9573,8.259660720825195

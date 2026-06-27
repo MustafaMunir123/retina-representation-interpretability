@@ -1,0 +1,85 @@
+{
+  "artifacts": {
+    "direction_metadata": {
+      "artifacts": {
+        "combined_cosine_matrix": "outputs/tables/cosine_matrix.csv",
+        "combined_direction_stability": "outputs/tables/direction_stability.csv",
+        "combined_direction_summary": "outputs/tables/direction_summary.csv",
+        "combined_projection_ratios": "outputs/tables/projection_ratios.csv",
+        "cosine_matrix": "outputs/directions/eyepacs_resized_dinov2_resized_full_cosine_matrix.csv",
+        "direction_stability": "outputs/directions/eyepacs_resized_dinov2_resized_full_direction_stability.csv",
+        "direction_summary": "outputs/directions/eyepacs_resized_dinov2_resized_full_direction_summary.csv",
+        "directions": "outputs/directions/eyepacs_resized_dinov2_resized_full_directions.npz",
+        "metadata": "outputs/directions/eyepacs_resized_dinov2_resized_full_direction_meta.json",
+        "projection_ratios": "outputs/directions/eyepacs_resized_dinov2_resized_full_projection_ratios.csv"
+      },
+      "directions": [
+        "any_dr",
+        "referable_dr",
+        "severe_dr",
+        "sharpness",
+        "brightness",
+        "contrast",
+        "black_border",
+        "field_of_view",
+        "laterality"
+      ],
+      "embedding_dim": 768,
+      "embeddings": "outputs/ablation/eyepacs_resized_dinov2_resized_full_embeddings.npy",
+      "index": "outputs/ablation/eyepacs_resized_dinov2_resized_full_index.parquet",
+      "min_class_count": 20,
+      "n_bootstrap": 50,
+      "num_directions": 9,
+      "num_embedding_rows": 35126,
+      "num_joined_rows": 35126,
+      "quality": "outputs/quality/quality_features.parquet",
+      "random_state": 17,
+      "run": "eyepacs_resized_dinov2_resized_full",
+      "runtime_seconds": 2.501,
+      "skipped_targets": []
+    },
+    "embeddings": "outputs/ablation/eyepacs_resized_dinov2_resized_full_embeddings.npy",
+    "improvement_summary": "outputs/tables/improvement_summary.csv",
+    "index": "outputs/ablation/eyepacs_resized_dinov2_resized_full_index.parquet",
+    "metadata": "outputs/ablation/eyepacs_resized_dinov2_resized_full_ablation_meta.json",
+    "probe_metadata": {
+      "artifacts": {
+        "coefficients": "outputs/probes/eyepacs_resized_dinov2_resized_full_probe_coefficients.csv",
+        "combined_metrics": "outputs/tables/probe_metrics.csv",
+        "comparison": "outputs/tables/probe_comparison.csv",
+        "figure": "outputs/figures/probes/eyepacs_resized_dinov2_resized_full_probe_auc.png",
+        "metadata": "outputs/probes/eyepacs_resized_dinov2_resized_full_probe_meta.json",
+        "metrics": "outputs/probes/eyepacs_resized_dinov2_resized_full_probe_metrics.csv",
+        "predictions": "outputs/probes/eyepacs_resized_dinov2_resized_full_probe_predictions.parquet"
+      },
+      "embedding_dim": 768,
+      "embeddings": "outputs/ablation/eyepacs_resized_dinov2_resized_full_embeddings.npy",
+      "index": "outputs/ablation/eyepacs_resized_dinov2_resized_full_index.parquet",
+      "num_embedding_rows": 35126,
+      "num_joined_rows": 35126,
+      "num_targets": 9,
+      "quality": "outputs/quality/quality_features.parquet",
+      "random_state": 17,
+      "run": "eyepacs_resized_dinov2_resized_full",
+      "runtime_seconds": 66.878,
+      "skipped_targets": [],
+      "test_size": 0.2
+    }
+  },
+  "baseline_run": "eyepacs_resized_dinov2_resized_full",
+  "directions": "outputs/directions/eyepacs_resized_dinov2_resized_full_directions.npz",
+  "embedding_dim": 768,
+  "embeddings": "outputs/embeddings/eyepacs_resized_dinov2_resized_full_embeddings.npy",
+  "evaluate": true,
+  "index": "outputs/embeddings/eyepacs_resized_dinov2_resized_full_index.parquet",
+  "intervention": "remove_sharpness_laterality",
+  "intervention_run": "eyepacs_resized_dinov2_resized_full",
+  "num_images": 35126,
+  "quality": "outputs/quality/quality_features.parquet",
+  "removed_directions": [
+    "sharpness",
+    "laterality"
+  ],
+  "runtime_seconds": 69.625,
+  "subspace_rank": 2
+}
