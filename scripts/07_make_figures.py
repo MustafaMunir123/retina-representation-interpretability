@@ -12,20 +12,20 @@ DISEASE_LABELS = {
     "severe_dr": "Severe DR",
 }
 RUN_LABELS = {
-    "eyepacs_resized_dinov2_resized_10k": "Resized",
-    "eyepacs_cropped_dinov2_cropped_10k": "Cropped",
-    "eyepacs_resized_dinov2_resized_10k_resid_remove_sharpness_laterality": "Resized - S/L",
-    "eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality": "Cropped - S/L",
+    "eyepacs_resized_dinov2_resized_full": "Resized",
+    "eyepacs_cropped_dinov2_cropped_35k": "Cropped",
+    "eyepacs_resized_dinov2_resized_full_resid_remove_sharpness_laterality": "Resized - S/L",
+    "eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality": "Cropped - S/L",
 }
 BASELINE_RUNS = [
-    "eyepacs_resized_dinov2_resized_10k",
-    "eyepacs_cropped_dinov2_cropped_10k",
+    "eyepacs_resized_dinov2_resized_full",
+    "eyepacs_cropped_dinov2_cropped_35k",
 ]
 INTERVENTION_RUNS = [
-    "eyepacs_resized_dinov2_resized_10k",
-    "eyepacs_resized_dinov2_resized_10k_resid_remove_sharpness_laterality",
-    "eyepacs_cropped_dinov2_cropped_10k",
-    "eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality",
+    "eyepacs_resized_dinov2_resized_full",
+    "eyepacs_resized_dinov2_resized_full_resid_remove_sharpness_laterality",
+    "eyepacs_cropped_dinov2_cropped_35k",
+    "eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality",
 ]
 BOTTLENECK_LABELS = {
     "sharpness": "Sharpness",
@@ -145,14 +145,14 @@ def _save_projection_figure(projection, figure_dir: Path) -> Path:
     fig, ax = plt.subplots(figsize=(6.4, 4.0))
     ax.barh(
         y - height / 2,
-        pivot["eyepacs_resized_dinov2_resized_10k"],
+        pivot["eyepacs_resized_dinov2_resized_full"],
         height=height,
         color="#2f6f9f",
         label="Resized",
     )
     ax.barh(
         y + height / 2,
-        pivot["eyepacs_cropped_dinov2_cropped_10k"],
+        pivot["eyepacs_cropped_dinov2_cropped_35k"],
         height=height,
         color="#7cb7b8",
         label="Cropped",
@@ -182,13 +182,13 @@ def _save_residualization_figure(probes, figure_dir: Path) -> Path:
     ]
     run_pairs = [
         (
-            "eyepacs_resized_dinov2_resized_10k",
-            "eyepacs_resized_dinov2_resized_10k_resid_remove_sharpness_laterality",
+            "eyepacs_resized_dinov2_resized_full",
+            "eyepacs_resized_dinov2_resized_full_resid_remove_sharpness_laterality",
             "Resized",
         ),
         (
-            "eyepacs_cropped_dinov2_cropped_10k",
-            "eyepacs_cropped_dinov2_cropped_10k_resid_remove_sharpness_laterality",
+            "eyepacs_cropped_dinov2_cropped_35k",
+            "eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality",
             "Cropped",
         ),
     ]

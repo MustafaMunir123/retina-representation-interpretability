@@ -26,6 +26,15 @@ eyepacs_cropped_dinov2_cropped_35k,contrast_high_vs_low,quality,high,low,0.99543
 eyepacs_cropped_dinov2_cropped_35k,black_border_high_vs_low,quality,high,low,0.99997950556536,0.999141955662212,0.9991515837104072,7069,6959,1713,1823,14028,3536,group_shuffle
 eyepacs_cropped_dinov2_cropped_35k,field_of_view_high_vs_low,quality,high,low,0.9997332888814804,0.9965574327747436,0.9965704486996284,6997,7068,1785,1714,14065,3499,group_shuffle
 eyepacs_cropped_dinov2_cropped_35k,laterality_right_vs_left,anatomy,right,left,0.3611259192706947,0.4023626530031312,0.4023626530031312,14050,14050,3513,3513,28100,7026,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,any_dr,disease,true,false,0.782586091957454,0.718128438952071,0.7446626814688301,7444,20656,1872,5154,28100,7026,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,referable_dr,disease,true,false,0.8493068476076401,0.7683998773032393,0.798462852263023,5512,22588,1361,5665,28100,7026,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,severe_dr,disease,true,false,0.9421743934475014,0.8605686604989011,0.918872758326217,1276,26824,305,6721,28100,7026,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,sharpness_high_vs_low,quality,high,low,0.9991902306294856,0.9908126206711148,0.9908675799086758,7003,7057,1779,1725,14060,3504,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,brightness_high_vs_low,quality,high,low,0.9999938932239856,0.9985896561499412,0.9985831680362708,6971,7064,1811,1718,14035,3529,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,contrast_high_vs_low,quality,high,low,0.9960268539678128,0.970090536788449,0.970161977834612,6977,7068,1805,1714,14045,3519,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,black_border_high_vs_low,quality,high,low,0.9999996797744588,0.9997081144191478,0.9997171945701356,7069,6959,1713,1823,14028,3536,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,field_of_view_high_vs_low,quality,high,low,0.9999405129613106,0.99913645738342,0.9991426121749072,6997,7068,1785,1714,14065,3499,group_shuffle
+eyepacs_cropped_dinov2_cropped_35k_resid_remove_sharpness_laterality,laterality_right_vs_left,anatomy,right,left,0.9034063952936712,0.8343296327924851,0.8343296327924851,14050,14050,3513,3513,28100,7026,group_shuffle
 eyepacs_resized_dinov2_resized_10k,any_dr,disease,true,false,0.7311056019094127,0.675731883298131,0.705,2189,5811,554,1446,8000,2000,group_shuffle
 eyepacs_resized_dinov2_resized_10k,referable_dr,disease,true,false,0.8104089099754734,0.7444654416790639,0.779,1627,6373,385,1615,8000,2000,group_shuffle
 eyepacs_resized_dinov2_resized_10k,severe_dr,disease,true,false,0.8812999239254469,0.7424638645872955,0.9325,339,7661,88,1912,8000,2000,group_shuffle
